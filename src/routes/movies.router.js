@@ -17,6 +17,10 @@ router.get("/", async(req,res) =>{
     router.post("/add-movie" , async(req,res) => {
         const movie = req.body;
 
-        const response = await Movie
+        const response = await Movie.create(req.body)
+        res.status(200).send({
+            message : "successfully created",
+            data : response
+        })
     })
 })

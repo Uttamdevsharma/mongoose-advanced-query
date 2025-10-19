@@ -10,6 +10,11 @@ const cors = require('cors')
 app.use(express.json());
 app.use(cors())
 
+//routes import
+const movieRouter =require("./src/routes/movies.router.js")
+
+//use routes
+app.use("/movie",movieRouter)
 
 const uri = process.env.DB_URL
 //mongoose connect
